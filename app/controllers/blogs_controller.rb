@@ -38,7 +38,7 @@ class BlogsController < ApplicationController
   # DELETE /blogs/1
   def destroy
     @blog.destroy
-    redirect_to blogs_url(locale: I18n.locale), notice: notice: t(".blog_destroyed")
+    redirect_to blogs_url(locale: I18n.locale), notice: t(".blog_destroyed")
   end
   private
     # Use callbacks to share common setup or constraints between actions.
