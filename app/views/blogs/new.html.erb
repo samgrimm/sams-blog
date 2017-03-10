@@ -1,0 +1,12 @@
+<h1><%= t('adding') %> Blog</h1>
+
+<%= form_for(@blog, url:blogs_path( locale: I18n.locale) ) do |f| %>
+
+  <%= render 'form',  f: f %>
+
+  <div class="form-group">
+    <%= f.submit t('.create'), class:'btn btn-primary' %>
+  </div>
+  <% end %>
+
+<%= link_to fa_icon('arrow-circle-left'), blogs_path(locale:I18n.locale) %>

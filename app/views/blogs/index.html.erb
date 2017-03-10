@@ -1,0 +1,20 @@
+<h2><%= t('.Blogs') %></h2>
+
+<hr>
+
+<div>
+  <% @blogs.each do |blog| %>
+    <div class="content">
+      <p><%= blog.title %></p>
+      <p><%= blog.body %></p>
+      <p><%= blog.user %></p>
+      <p><%= link_to t('show'), blog_path(blog, locale: I18n.locale) %></p>
+      <p><%= link_to t('edit'), edit_blog_path(blog,locale: I18n.locale) %></p>
+      <p><%= link_to t('delete'), blog_path(blog, locale: I18n.locale), method: :delete, data: { confirm: t('are_you_sure') } %></p>
+    </div>
+  <% end %>
+</div>
+
+<br>
+
+<%= link_to fa_icon('plus'), new_blog_path( locale:I18n.locale) %>
